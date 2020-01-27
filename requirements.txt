@@ -46,7 +46,6 @@ escapism==1.0.0
 et-xmlfile==1.0.1
 factorial==1.0.0
 flake8==3.7.9
-Flask==1.0.3
 folium==0.9.1
 future==0.18.2
 gast==0.2.2
@@ -55,7 +54,6 @@ geopy==1.20.0
 gitdb2==2.0.6
 GitPython==3.0.5
 glob2==0.6
-graphviz==0.13
 grpcio==1.21.1
 gunicorn==20.0.4
 h5py==2.9.0
@@ -78,15 +76,6 @@ jmespath==0.9.4
 joblib==0.13.2
 joypy==0.1.10
 jsonschema==3.0.1
-jupyter==1.0.0
-jupyter-client==5.2.4
-jupyter-console==6.0.0
-jupyter-core==4.4.0
-jupyter-repo2docker==0.10.0
-jupyterlab-git==0.9.0
-Keras==2.2.5
-Keras-Applications==1.0.8
-Keras-Preprocessing==1.1.0
 keyring==20.0.0
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.3
@@ -148,7 +137,6 @@ python-jsonrpc-server==0.3.2
 python-language-server==0.31.2
 pythonfinder==1.2.1
 pytz==2019.1
-pywin32==227
 pywin32-ctypes==0.2.0
 pywinpty==0.5.5
 PyYAML==5.1.2
@@ -189,9 +177,6 @@ streamlit==0.53.0
 sympy==1.4
 tabula-py==2.0.1
 tabulate==0.8.3
-tensorboard==1.13.1
-tensorflow==1.13.1
-tensorflow-estimator==1.13.0
 termcolor==1.1.0
 terminado==0.8.2
 testpath==0.4.2
