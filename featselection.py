@@ -6,7 +6,7 @@ import seaborn as sns
 import os
 import re
 from minitoolboxVB import FeatureSelection, DropImpute,Outliers
-from tkinter.filedialog import askopenfilename
+#from tkinter.filedialog import askopenfilename
 
 #MLE Methods
 from sklearn.model_selection import train_test_split

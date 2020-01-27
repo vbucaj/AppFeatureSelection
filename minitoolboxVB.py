@@ -9,24 +9,24 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import plotly.express as px
+#import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
 from itertools import cycle,combinations
-from termcolor import colored
+#from termcolor import colored
 #from mpl_toolkits.mplot3d import Axes3D
 #from matplotlib.patches import FancyArrowPatch
 #from mpl_toolkits.mplot3d import proj3d
 #from sklearn.manifold import TSNE
 from matplotlib.pyplot import cm
-from cycler import cycler
+#from cycler import cycler
 #import pylab
 #import graphviz
 #import os
 
-import cufflinks as cf
-from plotly.offline import download_plotlyjs, iplot
+#import cufflinks as cf
+#from plotly.offline import download_plotlyjs, iplot
 import plotly
 
 
@@ -42,7 +42,7 @@ from scipy.stats import gaussian_kde
 
 plotly.offline.init_notebook_mode(connected=True)
 
-#cf.go_offline()
+
 
 
 
