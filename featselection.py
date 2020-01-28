@@ -41,48 +41,20 @@ def sidebar_info():
 def body():
     if st.sidebar.checkbox('Feature Selection'):
 
-        # def file_selector(folder_path='.'):
-        #     filenames = os.listdir(folder_path)
-        #     selected_filename = st.sidebar.selectbox('Select a file', filenames)
-        #     return os.path.join(folder_path, selected_filename)
-        #
-        #
-        # filename = file_selector()
-        # st.write('You selected `%s`' % filename)
-        # sheet_name = st.sidebar.text_input(label='Sheet Name')
+        uploaded_file = st.sidebar.file_uploader('Choose an Excel File', type=['csv', 'xls', 'xlsx'])
 
-        path = st.sidebar.text_input('Full File Path')
         sheet_name = st.sidebar.text_input(label='Sheet Name')
 
-        def create_dataframe(path, sheetname=None):
-            if path:
+        def create_dataframe(uploaded_file, sheetname=None):
 
-                if path[-4:] == '.csv':
-                    return pd.read_csv(path, sheet_name=sheetname)
-                elif path[-4:] == '.xls':
-                    return pd.read_excel(path, sheet_name=sheetname)
-                elif path[-5:] == '.xlsx':
-                    return pd.read_excel(path, sheet_name=sheetname)
-                else:
-                    raise ValueError('Your file is not CSV or Excel')
+            if uploaded_file is not None:
+                data = pd.read_excel(uploaded_file, sheet_name=sheetname)
+                return data
 
-        # def create_dataframe(filename,sheetname=None):
-        #
-        #
-        #     if filename[-4:]=='.csv':
-        #         return pd.read_csv(filename,sheet_name=sheetname)
-        #     elif filename[-4:]=='.xls':
-        #         return pd.read_excel(filename,sheet_name=sheetname)
-        #     elif filename[-5:]=='.xlsx':
-        #         return pd.read_excel(filename,sheet_name=sheetname)
-        #     else:
-        #         raise ValueError('Your file is not CSV or Excel')
-
-        #data = create_dataframe(filename, 'Edited Data')
 
         if st.checkbox('Display Data:'):
 
-            data = create_dataframe(path, sheet_name)
+            data = create_dataframe(uploaded_file, sheet_name)
             st.dataframe(data)
 
             select_subset=st.sidebar.selectbox("Select a Subset of DataFrame",['Yes','No'])
