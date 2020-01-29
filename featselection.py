@@ -42,13 +42,22 @@ def body():
     if st.sidebar.checkbox('Feature Selection'):
 
         uploaded_file = st.sidebar.file_uploader('Choose an Excel File', type=['csv', 'xls', 'xlsx'])
+        file_extension = st.sidebar.text_input('Enter File Extension')
+        # st.write(type(uploaded_file))
 
         sheet_name = st.sidebar.text_input(label='Sheet Name')
 
         def create_dataframe(uploaded_file, sheetname=None):
 
             if uploaded_file is not None:
-                data = pd.read_excel(uploaded_file, sheet_name=sheetname)
+                if file_extension == 'xls' or file_extension == 'xlsx':
+                    if sheet_name == '':
+                        data = pd.read_excel(uploaded_file)
+                    else:
+                        data = pd.read_excel(uploaded_file, sheet_name=sheetname)
+
+                elif file_extension == 'csv':
+                    data = pd.read_csv(uploaded_file)
                 return data
 
 
@@ -314,8 +323,8 @@ def body():
                                                       degree=deg, probability=True)
 
                     if st.checkbox("Run Feature Selection"):
-                        frame_width = st.sidebar.slider('Frame Width:', 200, 1000, 800)
-                        frame_height = st.sidebar.slider('Frame Height:', 100, 100, 400)
+                        frame_width = st.sidebar.slider('Frame Width:', 2, 30, 10)
+                        frame_height = st.sidebar.slider('Frame Height:', 1, 30, 6)
 
                         feat_sel = FeatureSelection(data, classifier=selected_classifier)
 
