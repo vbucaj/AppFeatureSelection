@@ -54,6 +54,8 @@ def homepage():
         <li> Start by selecting the page <b> Feature Selection </b> under <b> Menu</b>
         <li> Check the box <b> Feature Selection</b>
         <li> Upload a file. Currently only the following formats are supported <b>.csv, .xlsx, .xls</b></li>
+        <li> Next you <b> MUST</b> specify the file type. For example if it is an Excel file, enter <b> xlsx</b> or <b>xls</b> without the dot.
+            Similarly, if it is a CSV file enter <b>csv</b></li>
         <li> You can provide a <b> Sheet Name</b>. If you do not provide one, it will be assumed that it is the first one.
         <li>Once the file is uploaded it will be converted to a Pandas DataFrame. 
         For the time being, the last column of the DataFrame <b> MUST</b> be the response variable. In the future we will make
