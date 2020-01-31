@@ -230,7 +230,7 @@ def body():
                                                           x_fontsize=16,
                                                           y_fontsize=16)
                             #output
-                            st.pyplot()
+                            #st.pyplot()
 
 
 
@@ -272,7 +272,8 @@ def body():
                         output=feat_sel.feature_selection(regModel=True,
                                                      classModel=False,
                                                      boxPlot=True,
-                                                     length=12,
+                                                    length=frame_width,
+                                                    height=frame_height,
                                                      x_fontsize=18,
                                                      y_fontsize=16,
                                                      xticks_size=14,
@@ -280,8 +281,8 @@ def body():
                                                      title='Feature Selection For XXX',
                                                      title_fontsize=18,
                                                      iterations=50)
-                        output
-                        st.plotly_chart()
+                        #output
+                        #st.plotly_chart()
                     elif metric_type=='MSE':
                         feat_sel = FeatureSelection(data=data, r2_score=False, mse=True, regressor=LinearRegression())
 
@@ -339,8 +340,8 @@ def body():
                                                             title_fontsize=22,
                                                             x_fontsize=16,
                                                             y_fontsize=16)
-                        output
-                        st.pyplot()
+                        #output
+                        #st.pyplot()
 
 
 
