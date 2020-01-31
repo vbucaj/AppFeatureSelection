@@ -455,24 +455,28 @@ class FeatureSelection(object):
 
 
        elif classModel==True and roc==True:
-           n=len(self.roc_auc.keys())
-           colors = iter(cm.gist_ncar(np.linspace(0, 1, n)))
-           plt.figure(figsize=(self.length,self.height))
+           layout = go.Layout(template="plotly_dark", width=self.length, height=self.height,
+                              title_text="Feature Selection",
+                              xaxis_title='False Positive Rate',
+                              yaxis_title='True Positive Rate'
+                              )
+           fig = go.Figure(layout=layout)
            for feat in list(self.roc_auc.keys())[1:]:
-               
-               plt.plot(self.fpr[feat][0], self.tpr[feat][0], 
-                        label='Shuffling  {} (Area={:.3f})'.format(feat.upper(),self.roc_auc[feat][0]),
-                        linestyle='-',lw=2,color=next(colors))
-           
-           plt.plot(np.linspace(0,1,10),np.linspace(0,1,10),linestyle='--',lw=3, label='No learning')
-               #print(self.roc_auc[feat])
-           plt.plot(self.fpr['Original'][0],self.tpr['Original'][0],
-                    label='ROC curve for the ORIGINAL model (Area={:.3f})'.format(self.roc_auc['Original'][0]),
-                    linestyle=':',lw=4,color='r')
-           plt.legend(loc='lower right')
-           plt.title(title,fontsize=self.title_fontsize)
-           plt.xlabel('False Positive Rate',fontsize=self.x_fontsize)
-           plt.ylabel('True Positive Rate',fontsize=self.y_fontsize)
-       #print(self.fpr['Original'])
+               fig.add_trace(go.Scatter(x=self.fpr[feat][0], y=self.tpr[feat][0],
+                                        hovertext='AUC for {} = {:.3f}'.format(feat.upper(), self.roc_auc[feat][0]),
+                                        name='{} (Area={:.3f})'.format(feat.lower(), self.roc_auc[feat][0])))
+
+           fig.add_trace(go.Scatter(x=[0, 1], y=[0, 1],
+                                    hovertext='No Learning',
+                                    name='No learning',
+                                    line={'dash': 'dot', 'width': 4}))
+
+           fig.add_trace(go.Scatter(x=self.fpr['Original'][0], y=self.tpr['Original'][0],
+                                    hovertext='AUC for ORIGINAL model={:.3f}'.format(self.roc_auc['Original'][0]),
+                                    name='ORIGINAL model (Area={:.3f})'.format(self.roc_auc['Original'][0]),
+                                    line=dict(color='red', width=5, dash='dot')
+                                    ))
+
+           st.plotly_chart(fig)
     
 

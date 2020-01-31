@@ -65,11 +65,12 @@ def homepage():
         <ul>
         <li> <b>Select Columns:</b> You will be prompted to select multiple columns from your DataFrame. Remember, you <b> MUST</b> select
         the column of the target/response variable last.</li>
-        <li><b>Drop & Imputation:</b> You can specify a percentage limt for dropping the columns that miss a higher percentage of data. 
-        The rest of the missing data will be imputed by by first building an empirical distribution for each feature and then 
-        imputing the missing values by values randomly sampled from the corresponding empirical distribution.</li>
+        <li><b>Drop & Imputation:</b> You can specify a percentage theshold for drop & impute. Features that miss a higher percentage of data
+        than the specified threshold will be dropped while the rest will be imputed. The rest of the missing data will be 
+        imputed by by first building an empirical distribution for each feature and then imputing the missing values by 
+        values randomly sampled from the corresponding empirical distribution.</li>
         <li> Next you will be prompted to selecting a Problem Type</li>
-        <li> Next you will be required to select the desired ML Method/Model that will be used by the algorithm to perform the analysi. </li>
+        <li> Next you will be required to select the desired ML Method/Model that will be used by the algorithm to perform the analysis. </li>
         <li> After picking the ML Model, you will be prompted to specify a few parameters for that particular Method.</li>
         <li> Finally, to display the results check the <b> Run Feature Selection </b> button on the main body.
         <ul>
