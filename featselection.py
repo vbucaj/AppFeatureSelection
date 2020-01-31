@@ -213,8 +213,8 @@ def body():
 
 
                         if st.checkbox("Run Feature Selection"):
-                            frame_width = st.sidebar.slider('Frame Width:', 4, 30, 12)
-                            frame_height = st.sidebar.slider('Frame Height:', 4, 30, 6)
+                            frame_width = st.sidebar.slider('Frame Width:', 200, 1200, 800)
+                            frame_height = st.sidebar.slider('Frame Height:', 200, 1000, 600)
 
                             feat_sel = FeatureSelection(data, classifier=selected_classifier)
 
@@ -324,8 +324,8 @@ def body():
                                                       degree=deg, probability=True)
 
                     if st.checkbox("Run Feature Selection"):
-                        frame_width = st.sidebar.slider('Frame Width:', 2, 30, 10)
-                        frame_height = st.sidebar.slider('Frame Height:', 1, 30, 6)
+                        frame_width = st.sidebar.slider('Frame Width:', 200, 1200, 800)
+                        frame_height = st.sidebar.slider('Frame Height:', 200, 1000, 600)
 
                         feat_sel = FeatureSelection(data, classifier=selected_classifier)
 
