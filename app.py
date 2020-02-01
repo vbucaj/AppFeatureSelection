@@ -41,7 +41,9 @@ def homepage():
     st.markdown("> Selecting the most important features is a vital part of Data Analysis")
     st.write("""
                 This app will enable the user to perform feature selection for both Classification and Regression problems.
-                The output will be interactive Boxplots or ROC curves, respectively.
+                The output will be interactive Boxplots or ROC curves, respectively. 
+                
+                The code for the app is hosted on my <a href='https://github.com/vbucaj/AppFeatureSelection'>GitHub Repo</a>.
                  """)
 
     st.write(""" 
@@ -88,6 +90,10 @@ def homepage():
 
 
         </ul>
+    <br>
+    <font color='red' size='4'>Disclaimer:</font> The software is provided <b> AS IS</b>, without warranty of any kind.
+    Under no circumstances shall the author and copyright holder of the software be liable for any claims, damages, or any other
+    liability arising from the use of the software.
 
 
  """,unsafe_allow_html=True)
