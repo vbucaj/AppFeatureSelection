@@ -43,7 +43,7 @@ def homepage():
                 This app will enable the user to perform feature selection for both Classification and Regression problems.
                 The output will be interactive Boxplots or ROC curves, respectively. 
                 
-                The code for the app is hosted on my <a href='https://github.com/vbucaj/AppFeatureSelection'>GitHub Repo</a>.
+                The code for the app is hosted on my <a href='https://github.com/vbucaj/AppFeatureSelection' target="_blank">GitHub Repo</a>.
                  """,unsafe_allow_html=True)
 
     st.write(""" 
@@ -91,12 +91,16 @@ def homepage():
 
         </ul>
 
-        <font color='red' size='4'>Disclaimer:</font> The software is provided <b> AS IS</b>, without warranty of any kind.
-        Under no circumstances shall the author and copyright holder of the software be liable for any claims, damages, or any other
-        liability arising from the use of the software.
-
 
  """,unsafe_allow_html=True)
+
+    st.write("""<font color='red' size='4'>Disclaimer:</font> The software is provided <b> AS IS</b>, without warranty of any kind.
+        Under no circumstances shall the author and copyright holder of the software be liable for any claims, damages, or any other
+        liability arising from the use of the software.
+        
+        <br>
+        &copy Valmir Bucaj
+        """,unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
