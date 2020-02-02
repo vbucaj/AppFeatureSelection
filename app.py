@@ -44,7 +44,7 @@ def homepage():
                 The output will be interactive Boxplots or ROC curves, respectively. 
                 
                 The code for the app is hosted on my <a href='https://github.com/vbucaj/AppFeatureSelection'>GitHub Repo</a>.
-                 """)
+                 """,unsafe_allow_html=True)
 
     st.write(""" 
         <h3> How to use the App</h3>
