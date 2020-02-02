@@ -23,7 +23,9 @@ def side_bar_homepage():
     st.sidebar.info("""My name is Valmir Bucaj. I am an Assistant Professor of Mathematics at the U.S. Military Academy, West Point. 
     I am passionate about Data Science, Machine Learning, and AI.
     You can connect with me via [LinkedIn](https://www.linkedin.com/in/valmir-bucaj-phd-7731a093/),
-     [Github](https://github.com/vbucaj), or [Website](https://vbucaj.github.io/MA477-course/)""")
+     [Github](https://github.com/vbucaj), or [Website](https://vbucaj.github.io/MA477-course/).
+     
+     (c) V.Bucaj""")
 
 # app layout
 def createlayout():
@@ -98,8 +100,10 @@ def homepage():
         Under no circumstances shall the author and copyright holder of the software be liable for any claims, damages, or any other
         liability arising from the use of the software.
         
-        <br>
-        &copy Valmir Bucaj
+        
+        
+        
+        &#169 V.Bucaj
         """,unsafe_allow_html=True)
 
 if __name__ == "__main__":
