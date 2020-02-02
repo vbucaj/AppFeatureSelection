@@ -94,16 +94,11 @@ def homepage():
         </ul>
 
 
- """,unsafe_allow_html=True)
+    """,unsafe_allow_html=True)
 
     st.write("""<font color='red' size='4'>Disclaimer:</font> The software is provided <b> AS IS</b>, without warranty of any kind.
         Under no circumstances shall the author and copyright holder of the software be liable for any claims, damages, or any other
         liability arising from the use of the software.
-        
-        
-        
-        
-        &#169 V.Bucaj
         """,unsafe_allow_html=True)
 
 if __name__ == "__main__":
