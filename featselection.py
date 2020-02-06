@@ -50,14 +50,27 @@ def body():
         def create_dataframe(uploaded_file, sheetname=None):
 
             if uploaded_file is not None:
+                try:
+
+                    if file_extension == 'xls' or file_extension == 'xlsx':
+                        if sheet_name == '':
+                            data = pd.read_excel(uploaded_file)
+                        else:
+                            data = pd.read_excel(uploaded_file, sheet_name=sheetname)
+
+                    elif file_extension == 'csv':
+                        data = pd.read_csv(uploaded_file)
+                    return data
+                except:
+                    pass
                 if file_extension == 'xls' or file_extension == 'xlsx':
                     if sheet_name == '':
-                        data = pd.read_excel(uploaded_file, encoding = 'utf8')
+                        data = pd.read_excel(uploaded_file, encoding='utf-8')
                     else:
-                        data = pd.read_excel(uploaded_file, sheet_name=sheetname, encoding = 'utf8')
+                        data = pd.read_excel(uploaded_file, sheet_name=sheetname, encoding='utf-8')
 
                 elif file_extension == 'csv':
-                    data = pd.read_csv(uploaded_file, encoding = 'utf8')
+                    data = pd.read_csv(uploaded_file, encoding='utf-8')
                 return data
 
 
