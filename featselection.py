@@ -52,12 +52,12 @@ def body():
             if uploaded_file is not None:
                 if file_extension == 'xls' or file_extension == 'xlsx':
                     if sheet_name == '':
-                        data = pd.read_excel(uploaded_file)
+                        data = pd.read_excel(uploaded_file, encoding = 'utf8')
                     else:
-                        data = pd.read_excel(uploaded_file, sheet_name=sheetname)
+                        data = pd.read_excel(uploaded_file, sheet_name=sheetname, encoding = 'utf8')
 
                 elif file_extension == 'csv':
-                    data = pd.read_csv(uploaded_file)
+                    data = pd.read_csv(uploaded_file, encoding = 'utf8')
                 return data
 
 
